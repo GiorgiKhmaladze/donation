@@ -1,0 +1,5 @@
+<div class="overlay" (click)="onOverlayClicked($event)">
+    <div class="dialog animated" [ngClass]="setClassNames()" [style.height]="dialogConfig.height + 'px'" [style.background]="dialogConfig.background" [style.width]="dialogConfig.width + 'px'" (click)="onDialogClicked($event)">
+      <ng-template appInsertion></ng-template>
+    </div>
+  </div>

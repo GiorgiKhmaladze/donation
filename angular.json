@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
             ],
             "scripts": []
           },
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "donate"
+    }
+  },
+  "defaultProject": "donate",
+  "cli": {
+    "analytics": "89a8ff67-1d51-4432-bd58-5ae85384053a"
+  }
 }

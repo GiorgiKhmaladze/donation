@@ -1,0 +1,248 @@
+@keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .fadeInDown {
+    animation-name: fadeInDown;
+  }
+  @keyframes fadeOutUp {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+
+  .fadeOutUp {
+    animation-name: fadeOutUp;
+  }
+  @keyframes zoomOut {
+    from {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  .zoomOut {
+    animation-name: zoomOut;
+  }
+  @keyframes jackInTheBox {
+    from {
+      opacity: 0;
+      transform: scale(0.1) rotate(30deg);
+      transform-origin: center bottom;
+    }
+
+    50% {
+      transform: rotate(-10deg);
+    }
+
+    70% {
+      transform: rotate(3deg);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .jackInTheBox {
+    animation-name: jackInTheBox;
+  }
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .zoomIn {
+    animation-name: zoomIn;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fadeIn {
+    animation-name: fadeIn;
+  }
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  .fadeOut {
+    animation-name: fadeOut;
+  }
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    80% {
+        transform: translateX(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    80% {
+        transform: translateX(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@-webkit-keyframes rotator {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(270deg);
+              transform: rotate(270deg);
+    }
+  }
+  
+  @keyframes rotator {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(270deg);
+              transform: rotate(270deg);
+    }
+  }
+  @-webkit-keyframes colors {
+    0% {
+      stroke: #4285F4;
+    }
+    25% {
+      stroke: #DE3E35;
+    }
+    50% {
+      stroke: #F7C223;
+    }
+    75% {
+      stroke: #1B9A59;
+    }
+    100% {
+      stroke: #4285F4;
+    }
+  }
+  
+  @keyframes colors {
+    0% {
+      stroke: #4285F4;
+    }
+    25% {
+      stroke: #DE3E35;
+    }
+    50% {
+      stroke: #F7C223;
+    }
+    75% {
+      stroke: #1B9A59;
+    }
+    100% {
+      stroke: #4285F4;
+    }
+  }
+  @-webkit-keyframes dash {
+    0% {
+      stroke-dashoffset: 187;
+    }
+    50% {
+      stroke-dashoffset: 46.75;
+      -webkit-transform: rotate(135deg);
+              transform: rotate(135deg);
+    }
+    100% {
+      stroke-dashoffset: 187;
+      -webkit-transform: rotate(450deg);
+              transform: rotate(450deg);
+    }
+  }
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: 187;
+    }
+    50% {
+      stroke-dashoffset: 46.75;
+      -webkit-transform: rotate(135deg);
+              transform: rotate(135deg);
+    }
+    100% {
+      stroke-dashoffset: 187;
+      -webkit-transform: rotate(450deg);
+              transform: rotate(450deg);
+    }
+  }
+  
+  .path {
+    stroke-dasharray: 187;
+    stroke-dashoffset: 0;
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+            animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+  }

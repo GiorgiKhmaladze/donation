@@ -1,0 +1,18 @@
+<div class="toolbar">
+    <div class="toolbar_title">
+        <span class="toolbar_title--start">DON<span class="toolbar_title--end">ATE</span></span>
+    </div>
+    <div class="toolbar_menu" #menuList>
+        <a class="toolbar_menu--item" #menuItem [routerLink]="[item.route]" *ngFor="let item of menuItems"
+            (mouseenter)="onMouseEnter(menuItem)" (mouseleave)="setActiveRoute()">
+            {{ item.title }}
+        </a>
+        <span class="effect" #menuItemBorder></span> 
+    </div>
+    <div class="toolbar_donate">
+        <a (click)="donateNow()">DONATE NOW</a>
+    </div>
+    <div class="toolbar_actions">
+
+    </div>
+</div>

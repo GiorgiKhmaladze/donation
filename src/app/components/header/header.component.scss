@@ -1,0 +1,89 @@
+@import '../../../variables.scss';
+.toolbar {
+    height: 60px;
+    background-color: $primary-color;
+    display: flex;
+    align-items: center;
+    opacity: 0.9;
+
+    &_title{
+        margin-left: 50px;
+        font-size: 20px;
+        width: 40%;
+        display: flex;
+        font-weight: bold;
+        justify-content: space-evenly;
+        &--start {
+            color: $color-white;
+        }
+
+        &--end {
+            color: $accent-color;
+        }
+    }
+    &_menu {
+        display: flex;
+        width: 50%;
+        font-size: 15px;
+        font-weight: bold;
+        color: $color-white;
+        justify-content: space-around;
+        position:relative;
+        a {     
+            color: inherit;
+            flex-grow: 1;
+            text-align: center;
+            text-decoration: none;
+        }
+        span {
+            position:absolute;
+            top: 25px; 
+            left:0; 
+            bottom:0; 
+            width:0; 
+            height:3px; 
+            background-color:$accent-color; 
+            -webkit-transition:all .3s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
+            -o-transition:all .3s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
+            transition:all .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+    }
+    &_donate {
+        width: 30%;
+        display: flex;
+        justify-content: flex-end;
+        height: 35px;
+        a {
+            background-color: $accent-color;
+            color: whitesmoke;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 4px;
+            &:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 1rem 2rem rgba(black, 0.2);
+                cursor: pointer;
+                transition: .2s all;
+                background-color: $accent-color-light;
+                &::after {
+                    transform: scaleX(1.4) scaleY(1.6);
+                    opacity: 0;
+                }
+            }
+            &:active, 
+            &:focus {
+                outline: none;
+                transform: translateY(-1px);
+                box-shadow: 0 0.5rem 1rem rgba(black, 0.2);
+            }
+        }
+    }
+    &_actions {
+        width: 35%;
+        display: flex;
+        justify-content: flex-end;
+    
+    }
+}

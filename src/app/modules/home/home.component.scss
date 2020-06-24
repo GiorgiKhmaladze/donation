@@ -1,0 +1,97 @@
+@import '../../../variables.scss';
+.container {
+    width: 100%;
+    margin-top: -60px;
+    display: flex;
+    flex-direction: column;
+    &_image {
+        height: 600px;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    &_box {
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        width: 70%;
+        margin-top: 50px;
+        &--wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-self: center;
+            width: 70%;
+            margin-top: 50px;
+        }
+        &--item {
+            font-size: 16px;
+            width: 30%;
+            color: dimgrey;
+            background-color: rgba($color: $color-white, $alpha: 0.8);
+            text-align: center;
+            border-radius: 3px;
+            box-shadow: 0 1.5rem 4rem rgba($color: black, $alpha: 0.15);
+            transition: transform .3s;
+            p {
+                padding: 30px;
+            }
+
+        &-icon {
+            font-size: 6rem;
+            margin-bottom: .5rem;
+            background-image: linear-gradient(to right, $accent-color, $accent-color-dark);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        &:hover {
+            transform: translateY(-1.5rem) scale(1.03);
+            }
+        }
+    }
+    &_info {
+        width: 70%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        display: flex;
+        align-self: center;
+        justify-content: space-between;
+        &--description {
+            width: 30%;
+            color: dimgray;
+            &-title {
+
+            }
+            &-body {
+
+            }
+        }
+        img {
+            width: 65%;
+        }
+    }
+}
+.feature-box {
+    background-color: rgba($color: $color-white, $alpha: 0.8);
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color: black, $alpha: 0.15);
+    transition: transform .3s;
+
+    &__icon {
+        font-size: 6rem;
+        margin-bottom: .5rem;
+        background-image: linear-gradient(to right, $accent-color, $accent-color-dark);
+        -webkit-background-clip: text;
+        color: transparent;
+
+    }
+
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.03);
+    }
+}
