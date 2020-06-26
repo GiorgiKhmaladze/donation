@@ -3,7 +3,7 @@
         <img src="../../../assets/images/header.jpg" alt="donate">
     </div>
     <div class="container_box">
-        <div class="container_box--item" *ngFor="let box of donationBox; let i = index">
+        <div class="container_box--item" *ngFor="let box of donationBox | async; let i = index">
             <!-- <div class="card">
                 <div class="card__side card__side--front">
                     <div [class]="'card__picture card__picture--' + (i+1)">

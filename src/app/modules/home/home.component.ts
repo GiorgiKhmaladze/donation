@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { HeaderService } from 'src/app/components/header/header.service';
+import { Widget } from 'src/app/shared/interfaces/widget.model';
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'app-home',
@@ -8,29 +11,12 @@ import { HeaderService } from 'src/app/components/header/header.service';
 })
 export class HomeComponent implements OnInit {
 
-  donationBox: any[] = [{
-    title: 'Who we are',
-    text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro?',
-    action: 'Donate now',
-    icon: 'fa fa-globe'
-  },
-  {
-    title: 'Became a donor',
-    text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro?',
-    action: 'Donate now',
-    icon: 'fa fa-user-circle'
-  },
-  {
-    title: 'Participate',
-    text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro?',
-    action: 'Donate now',
-    icon: 'fa fa-heart'
-  },
-  ];
+  donationBox: Observable<Widget[]>;
 
-  constructor(private headerService: HeaderService) { }
+  constructor(private headerService: HeaderService, private homeService: HomeService) { }
 
   ngOnInit(): void {
+    this.donationBox = this.homeService.getHomeWidgets();
     this.headerService.setInitialRoute('home');
   }
 
