@@ -34,9 +34,6 @@
             border-radius: 3px;
             box-shadow: 0 1.5rem 4rem rgba($color: black, $alpha: 0.15);
             transition: transform .3s;
-            :hover {
-                cursor: pointer;
-            }
             p {
                 padding: 30px;
             }
@@ -50,6 +47,7 @@
         }
 
         &:hover {
+            cursor: pointer;
             transform: translateY(-1.5rem) scale(1.03);
             }
         }

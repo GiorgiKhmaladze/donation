@@ -6,17 +6,9 @@
                     Donate now !
                 </h2>
             </div>
-            <div class="form__group">
-                <input id="name" type="text" class="form__input" placeholder="Full name" required>
-                <label for="name" class="form__label">Full name</label>
-            </div>
-            <div class="form__group">
-                <input id="email" type="email" class="form__input" placeholder="Email address" required>
-                <label for="email" class="form__label">Email name</label>
-            </div>
-            <div class="form__group">
-                <input id="amount" type="amount" class="form__input" placeholder="Amount" required>
-                <label for="amount" class="form__label">Amount</label>
+            <div *ngFor="let input of donationControls" class="form__group">
+                <app-input [name]="input.name" [required]="input.required" [placeholder]="input.placeholder"
+                    [key]="input.key" [control]="input.control" [type]="input.type"></app-input>
             </div>
             <div class="form__group margin-bottom">
                 <div class="form__radio-group">
