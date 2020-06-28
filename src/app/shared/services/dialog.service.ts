@@ -1,4 +1,5 @@
 import { ApplicationRef, ComponentFactoryResolver, ComponentRef, EmbeddedViewRef, Injectable, Injector } from '@angular/core';
+import { first } from 'rxjs/operators';
 import { DialogConfig } from 'src/app/modules/dialog/dialog-config';
 import { DialogInjector } from 'src/app/modules/dialog/dialog-injector';
 import { DialogRef } from 'src/app/modules/dialog/dialog-ref';
@@ -17,12 +18,10 @@ export class DialogService {
 
     const dialogRef = new DialogRef();
     map.set(DialogRef, dialogRef);
-    console.log(map);
 
-    const sub = dialogRef.afterClosed.subscribe((data) => {
+    dialogRef.afterClosed.pipe(first()).subscribe(() => {
       config.dialogState = false;
       this.removeDialogComponentFromBody(config);
-      sub.unsubscribe();
     });
 
     const componentFactory = this.cfr.resolveComponentFactory(DialogComponent);

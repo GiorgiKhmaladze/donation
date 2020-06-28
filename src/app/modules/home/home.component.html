@@ -2,37 +2,41 @@
     <div class="container_image">
         <img src="../../../assets/images/header.jpg" alt="donate">
     </div>
-    <div class="container_box">
-        <div class="container_box--item" *ngFor="let box of donationBox | async; let i = index">
-            <!-- <div class="card">
-                <div class="card__side card__side--front">
-                    <div [class]="'card__picture card__picture--' + (i+1)">
-                        &nbsp;
-                    </div>
-                    <h4 class="card__heading">
-                        <span [class]="'card__heading-span card__heading-span--' + (i+1)">{{box.title}}</span>
-                    </h4>
-                </div>
-                <div [class]="'card__side card__side--back card__side--back-' + (i+1)">
-                    <div class="card__cta">
-                        <div class="card__price-box">
-                            <p class="card__price-only">{{box.text}}
-                            </p>
+    <div *appNgvar="(donationBox | async) as donation" class="container_box" [ngClass]="donation?.length ? '' : 'spinner-position'">
+        <ng-container *ngIf="donation?.length, else spinner">
+            <div class="container_box--item" *ngFor="let box of donation; let i = index">
+                <!-- <div class="card">
+                    <div class="card__side card__side--front">
+                        <div [class]="'card__picture card__picture--' + (i+1)">
+                            &nbsp;
                         </div>
-                        <a href="#" class="btn btn--white">{{box.action}}</a>
+                        <h4 class="card__heading">
+                            <span [class]="'card__heading-span card__heading-span--' + (i+1)">{{box.title}}</span>
+                        </h4>
                     </div>
-                </div>
-            </div> -->
-            <i [class]="'container_box--item-icon ' + box.icon"></i>
-            <h3 class="heading-tertiary u-margin-bottom-small">
-                {{box.title}}
-            </h3>
-            <p class="feature-box__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia corrupti ipsum, earum,
-                fugiat deserunt
-                veritatis nam laborum pariatur voluptatem eveniet distinctio.
-            </p>
-        </div>
+                    <div [class]="'card__side card__side--back card__side--back-' + (i+1)">
+                        <div class="card__cta">
+                            <div class="card__price-box">
+                                <p class="card__price-only">{{box.text}}
+                                </p>
+                            </div>
+                            <a href="#" class="btn btn--white">{{box.action}}</a>
+                        </div>
+                    </div>
+                </div> -->
+                <i [class]="'container_box--item-icon ' + box.icon"></i>
+                <h3 class="heading-tertiary u-margin-bottom-small">
+                    {{box.title}}
+                </h3>
+                <p class="feature-box__text">
+                    {{box.text}}
+                </p>
+            </div>
+        </ng-container>
+        <ng-template #spinner>
+            <app-spinner></app-spinner>
+        </ng-template>
+
     </div>
     <div class="container_info">
         <img src="../../../assets/images/box.jpg" alt="box">

@@ -1,15 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { InsertionDirective } from 'src/app/shared/directives/insertion.directive';
 import { DialogComponent } from './dialogbox/dialog.component';
 
 
 
 @NgModule({
-  declarations: [DialogComponent],
+  declarations: [InsertionDirective, DialogComponent],
   imports: [
     CommonModule,
-    SharedModule
   ],
   entryComponents: [DialogComponent]
 })
