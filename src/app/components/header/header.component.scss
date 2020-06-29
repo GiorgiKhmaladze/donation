@@ -59,7 +59,8 @@
             font-weight: bold;
             display: flex;
             align-items: center;
-            padding: 10px;
+            padding: 15px;
+            font-size: 20px;
             border-radius: 4px;
             &:hover {
                 transform: translateY(-3px);
@@ -82,8 +83,13 @@
     }
     &_actions {
         width: 35%;
+        font-size: 20px;
         display: flex;
-        justify-content: flex-end;
-    
+        color: whitesmoke;
+        text-align: center;
+        justify-content: center;
+        &-title {
+            margin-right: 10px;
+        }
     }
 }

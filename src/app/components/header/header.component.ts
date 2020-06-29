@@ -18,27 +18,23 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit {
   private menuChildrenRef: [];
   menuItems = [
     {
-      title: 'HOME',
+      title: 'მთავარი',
       route: '/home',
     },
     {
-      title: 'ABOUT',
-      route: '/about',
-    },
-    {
-      title: 'DONATE',
+      title: 'დახმარება',
       route: '/donate',
     },
     {
-      title: 'EVENTS',
+      title: 'ივენთები',
       route: '/events',
     },
     {
-      title: 'GALLERY',
+      title: 'გალერეა',
       route: '/gallery',
     },
     {
-      title: 'CONTACT',
+      title: 'კონტაქტი',
       route: '/contact',
     }];
   constructor(private activatedRoute: ActivatedRoute, private headerService: HeaderService, private dialog: DialogService) { }
@@ -50,7 +46,7 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit {
   ngAfterViewInit(): void {
     this.currentRouteSubscription = this.headerService.initialRouteSubscription.subscribe(data => {
       const children = [...this.menuList.nativeElement.children];
-      const node = children.find(e => e.innerText.toLowerCase() === data);
+      const node = children.find(e => e.pathname.toLowerCase().includes(data));
       this.setStylesToActiveSpan(node);
     });
   }
@@ -66,7 +62,7 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit {
   setActiveRoute(): void {
     const children = [...this.menuList.nativeElement.children];
     const route = this.activatedRoute.snapshot.children[0].data.key;
-    const node = children.find(e => e.innerText.toLowerCase() === route);
+    const node = children.find(e => e.pathname.toLowerCase().includes(route));
     this.setStylesToActiveSpan(node);
   }
   ngOnDestroy(): void {

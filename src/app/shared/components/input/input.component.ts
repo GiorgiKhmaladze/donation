@@ -13,6 +13,7 @@ export class InputComponent {
   @Input() key: string;
   @Input() required: boolean;
   @Input() control: FormControl;
+  @Input() className: string;
 
 
 }

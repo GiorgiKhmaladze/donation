@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { HeaderService } from 'src/app/components/header/header.service';
+import { FormControlService } from 'src/app/shared/services/form-control.service';
 
 @Component({
   selector: 'app-donate',
@@ -13,9 +14,9 @@ export class DonateComponent implements OnInit {
     {
       type: 'text',
       initValue: '',
-      name: 'Full name',
+      name: 'სახელი და გვარი',
       required: true,
-      placeholder: 'Full name',
+      placeholder: 'სახელი და გვარი',
       key: 'name',
       validators: ['required'],
       control: null
@@ -23,9 +24,9 @@ export class DonateComponent implements OnInit {
     {
       type: 'email',
       initValue: '',
-      name: 'Email address',
+      name: 'ელ-ფოსტა',
       required: true,
-      placeholder: 'Email address',
+      placeholder: 'ელ-ფოსტა',
       key: 'email',
       control: null,
       validators: ['required', 'email'],
@@ -33,46 +34,38 @@ export class DonateComponent implements OnInit {
     {
       type: 'number',
       initValue: '',
-      name: 'Amount',
+      name: 'თანხა',
       required: true,
-      placeholder: 'Amount',
+      placeholder: 'თანხა',
       key: 'amount',
       control: null,
       validators: ['required']
     }
   ];
-  constructor(private headerService: HeaderService) { }
+  constructor(private headerService: HeaderService, private formControlService: FormControlService) { }
 
   ngOnInit(): void {
     this.headerService.setInitialRoute('donate');
     const formControls = {};
     for (const control of this.donationControls) {
       const newControl = formControls[control.key] = new FormControl(control.initValue, {
-        validators: this.appendValidators(control.validators),
+        validators: this.formControlService.appendValidators(control.validators),
       });
       control.control = newControl;
     }
     this.form = new FormGroup(formControls);
 
   }
-
-  appendValidators(validators: string[]) {
-    const formValidators = [];
-    for (const validator of validators) {
-      switch (validator) {
-        case 'required':
-          formValidators.push(Validators.required);
-          break;
-
-        case 'email':
-          formValidators.push(Validators.email);
-          break;
-
-        default:
-          break;
-      }
+  onSubmit() {
+    if (this.form.valid) {
+      console.log('form submitted');
+    } else {
+      Object.keys(this.form.controls).forEach(field => {
+        const control = this.form.get(field);
+        control.markAsTouched({ onlySelf: true });
+      });
     }
-    return formValidators;
   }
+
 
 }

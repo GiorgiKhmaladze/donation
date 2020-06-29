@@ -1,32 +1,33 @@
 <div class="donate">
     <div class="donate__form">
-        <form action="#" class="form">
+        <form [formGroup]="form" class="form">
             <div class="u-margin-bottom-medium">
                 <h2 class="heading-secondary">
-                    Donate now !
+                    დავეხმაროთ ერთმანეთს !
                 </h2>
             </div>
             <div *ngFor="let input of donationControls" class="form__group">
-                <app-input [name]="input.name" [required]="input.required" [placeholder]="input.placeholder"
-                    [key]="input.key" [control]="input.control" [type]="input.type"></app-input>
+                <app-input class="form__group-input" [name]="input.name" [required]="input.required"
+                    [placeholder]="input.placeholder" [key]="input.key" [control]="input.control" [type]="input.type"
+                    [className]=" form.get(input.key).invalid ? 'invalid' : 'valid' ">
+                </app-input>
+                <app-error class="form__group-error"
+                    *ngIf="form.get(input.key).touched && form.get(input.key).hasError('required')"
+                    [errorMessage]="'ველი აუცილებელია !'"></app-error>
+                <app-error *ngIf="form.get(input.key).touched && form.get(input.key).hasError('email')"
+                    [errorMessage]="'ელ-ფოსტა არასწორია !'"></app-error>
             </div>
             <div class="form__group margin-bottom">
                 <div class="form__radio-group">
                     <input type="radio" id="small" class="form__radio-input" name="size">
                     <label for="small" class="form__radio-label">
                         <span class="form__radio-button"></span>
-                        Small tour group
+                        <span class="form__radio-text">დაიმახსოვრე თანხა</span>
                     </label>
-                </div>
-                <div class="form__radio-group">
-                    <input type="radio" id="large" class="form__radio-input" name="size">
-                    <label for="large" class="form__radio-label">
-                        <span class="form__radio-button"></span>
-                        large tour group</label>
                 </div>
             </div>
             <div class="form__group">
-                <button type="submit" class="btn btn--green">Donate</button>
+                <button type="submit" class="btn btn--green" (click)="onSubmit()">დაეხმარე</button>
             </div>
         </form>
     </div>
