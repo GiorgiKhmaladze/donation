@@ -16,18 +16,19 @@
         <span class="toolbar_actions-title">თანხა:</span> <strong>300 ₾</strong>
     </div>
     <div class="toolbar_burger">
-        <input id="burger" type="checkbox"  class="toolbar_burger-checkbox"/>
+        <input id="burger" type="checkbox" class="toolbar_burger-checkbox" />
         <label for="burger">
             <span></span>
             <span></span>
             <span></span>
         </label>
         <nav class="toolbar_burger-items">
-            <ul>
-                <li *ngFor="let item of menuItems">
+            <ng-container *ngFor="let item of menuItems">
+                <span class="toolbar_burger-items--item">
+                    <i [class]="item.icon"></i>
                     <a [routerLink]="[item.route]">{{ item.title }}</a>
-                </li>
-            </ul>
+                </span>
+            </ng-container>
         </nav>
     </div>
 </div>
