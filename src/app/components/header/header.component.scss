@@ -1,10 +1,10 @@
 @import '../../../variables.scss';
 .toolbar {
     height: 60px;
-    background-color: $primary-color;
+    background-color: rgba($primary-color, 0.9);
     display: flex;
     align-items: center;
-    opacity: 0.9;
+    opacity: 0.99;
 
     &_title{
         margin-left: 50px;
@@ -127,6 +127,7 @@
       }      
     }
     nav {
+        opacity: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;

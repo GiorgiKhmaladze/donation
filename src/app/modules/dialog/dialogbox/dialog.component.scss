@@ -20,7 +20,8 @@
     height: 50%;
     display: flex;
     flex-direction: column;
-    padding: 8px;
+    padding: 1px;
+    border-radius: 3px;
   }
   .animated {
     animation-duration: .5s;

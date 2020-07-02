@@ -16,9 +16,7 @@ export class HomeComponent implements OnInit {
   constructor(private headerService: HeaderService, private homeService: HomeService) { }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.donationBox = this.homeService.getHomeWidgets();
-    }, 1000);
+    this.donationBox = this.homeService.getHomeWidgets();
     this.headerService.setInitialRoute('home');
   }
 

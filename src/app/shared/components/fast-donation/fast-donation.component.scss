@@ -1,0 +1,23 @@
+@import '../../../../variables.scss';
+
+.fastdonate {
+    background-image: linear-gradient(to right bottom, rgb(119, 130, 155), $primary-color-light);
+    height: 350px;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color: black, $alpha: .2);
+
+    &__form {
+        display: flex;
+        width: 75%;
+        padding-left: 6rem;
+    }
+
+}
+.heading {
+    color: $color-white;
+    font-size: 30px;
+    margin-bottom: 6rem;
+}
+.label {
+    color: $color-white;
+}

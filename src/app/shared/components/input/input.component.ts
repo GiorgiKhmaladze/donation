@@ -14,6 +14,6 @@ export class InputComponent {
   @Input() required: boolean;
   @Input() control: FormControl;
   @Input() className: string;
-
+  @Input() color = '';
 
 }

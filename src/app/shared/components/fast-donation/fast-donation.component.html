@@ -1,1 +1,25 @@
-<p>fast-donation works!</p>
+<div class="fastdonate">
+    <div class="fastdonate__form">
+        <form [formGroup]="form" class="form">
+            <div class="u-margin-bottom-medium">
+                <h2 class="heading">
+                    სწრაფი დახმარება
+                </h2>
+            </div>
+            <div *ngFor="let input of donationControls" class="form__group">
+                <app-input class="form__group-input" [name]="input.name" [required]="input.required"
+                    [placeholder]="input.placeholder" [key]="input.key" [control]="input.control" [type]="input.type"
+                    [className]=" form.get(input.key).invalid ? 'invalid' : 'valid' " [color]="'whitesmoke'">
+                </app-input>
+                <app-error class="form__group-error"
+                    *ngIf="form.get(input.key).touched && form.get(input.key).hasError('required')"
+                    [errorMessage]="'ველი აუცილებელია !'"></app-error>
+                <app-error *ngIf="form.get(input.key).touched && form.get(input.key).hasError('email')"
+                    [errorMessage]="'ელ-ფოსტა არასწორია !'"></app-error>
+            </div>
+            <div class="form__group">
+                <a class="btn btn--green" (click)="onSubmit()">დაეხმარე</a>
+            </div>
+        </form>
+    </div>
+</div>
