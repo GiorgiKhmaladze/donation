@@ -1,0 +1,26 @@
+<div class="carousel">
+	<ul class="slides">
+		<ng-container *ngFor="let slide of slides; let i = index;">
+			<input type="radio" name="radio-buttons" [id]="'img-' + (i + 1)" [checked]="i === 0" />
+			<li class="slide-container">
+				<div class="slide-image">
+					<img [src]="slide.url">
+				</div>
+				<div class="carousel-controls">
+					<label [for]="'img' + '-' + (i + 1 === 1 ? slides.length : i)" class="prev-slide">
+						<span>&lsaquo;</span>
+					</label>
+					<label [for]="'img' + '-' + (i + 1 === slides.length ? 1 : (i + 2))" class="next-slide">
+						<span>&rsaquo;</span>
+					</label>
+				</div>
+			</li>
+		</ng-container>
+
+
+		<div class="carousel-dots">
+			<label *ngFor="let number of slides; let i = index;" [for]="'img-' + (i + 1)" class="carousel-dot"
+				[id]="'img-dot-' + (i + 1)"></label>
+		</div>
+	</ul>
+</div>

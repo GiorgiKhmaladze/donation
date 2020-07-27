@@ -1,6 +1,7 @@
 @import '../../../../animations.scss';
 
 .overlay {
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     position: fixed;

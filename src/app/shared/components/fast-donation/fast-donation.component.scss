@@ -1,7 +1,8 @@
 @import '../../../../variables.scss';
 
 .fastdonate {
-    background-image: linear-gradient(to right bottom, rgb(119, 130, 155), $primary-color-light);
+    // background-image: linear-gradient(to top, rgb(161, 196, 190), $primary-color-light);
+    background-color: whitesmoke;
     height: 350px;
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color: black, $alpha: .2);
@@ -14,10 +15,10 @@
 
 }
 .heading {
-    color: $color-white;
+    color: $primary-color;
     font-size: 30px;
     margin-bottom: 6rem;
 }
 .label {
-    color: $color-white;
+    color: $primary-color;
 }

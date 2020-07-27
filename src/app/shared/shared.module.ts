@@ -4,12 +4,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorComponent } from './components/error/error.component';
 import { FastDonationComponent } from './components/fast-donation/fast-donation.component';
 import { InputComponent } from './components/input/input.component';
+import { SliderComponent } from './components/slider/slider.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { NgvarDirective } from './directives/ngvar.directive';
 
 
 @NgModule({
-  declarations: [SpinnerComponent, NgvarDirective, InputComponent, ErrorComponent, FastDonationComponent],
+  declarations: [SpinnerComponent, NgvarDirective, InputComponent, ErrorComponent, FastDonationComponent, SliderComponent],
   exports: [
     CommonModule,
     SpinnerComponent,
@@ -18,7 +19,8 @@ import { NgvarDirective } from './directives/ngvar.directive';
     ErrorComponent,
     ReactiveFormsModule,
     FormsModule,
-    FastDonationComponent
+    FastDonationComponent,
+    SliderComponent
   ],
   imports: [
     CommonModule,

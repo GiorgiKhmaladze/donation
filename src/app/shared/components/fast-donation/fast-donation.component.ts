@@ -12,13 +12,13 @@ export class FastDonationComponent implements OnInit {
   donationControls = [
     {
       type: 'number',
-      initValue: '',
+      initValue: 5,
       name: 'თანხა',
       required: true,
       placeholder: 'თანხა',
       key: 'amount',
       control: null,
-      validators: ['required']
+      validators: []
     }
   ];
 

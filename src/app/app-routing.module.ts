@@ -22,7 +22,15 @@ const routes: Routes = [{
   data: {
     key: 'donate'
   }
-}, {
+},
+{
+  path: 'events',
+  loadChildren: () => import('./modules/events/events.module').then(m => m.EventsModule),
+  data: {
+    key: 'events'
+  }
+},
+{
   path: '**',
   redirectTo: '',
   pathMatch: 'full'

@@ -21,14 +21,14 @@
             color: grey;
         }
         
-        // &:focus {
-        //     outline: none;
-        //     box-shadow: 0 1rem 2rem rgba($color: $color-black, $alpha: .1);
-        //     border-bottom: 3px solid $accent-color;
-        //     &:invalid {
-        //         border-bottom: 3px solid $warn-color;
-        //     }
-        // }
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color: $color-black, $alpha: .1);
+            border-bottom: 3px solid $accent-color;
+            &:invalid {
+                border-bottom: 3px solid $warn-color;
+            }
+        }
     }
 
     .invalid {

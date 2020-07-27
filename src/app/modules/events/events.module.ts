@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { DialogModule } from '../dialog/dialog.module';
-import { HomeComponent } from './home.component';
-import { HomeRouting } from './home.routing';
+import { EventsComponent } from './events.component';
+import { EventsRouting } from './events.routing';
 
 
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [EventsComponent],
   imports: [
-    HomeRouting,
+    EventsRouting,
     DialogModule,
     SharedModule
   ]
 })
-export class HomeModule { }
+export class EventsModule { }
