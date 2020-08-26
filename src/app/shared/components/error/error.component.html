@@ -1,1 +1,2 @@
-<span class="error">{{errorMessage}}</span>
+<span class="error" [ngClass]="setClassNames()" [class.hide]="_hide"
+    [class.margin-bottom]="!marginTop">{{_text}}</span>

@@ -1,6 +1,23 @@
 @import '../../../../variables.scss';
+.hide {
+    display: none;
+}
+span {
+    font-size: 12px;
+    animation-duration: .3s;
+    animation-fill-mode: both;
+}
+.margin-top {
+    margin-top: -15px;
+}
+.margin-bottom {
+    margin-bottom: 10px;
+}
 .error {
     font-size: 1.2rem;
     font-weight: 700;
+    margin-left: 2rem;
+    display: block;
+    transition: all 0.3s;
     color: $warn-color;
 }

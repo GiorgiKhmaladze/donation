@@ -6,11 +6,24 @@ import { FastDonationComponent } from './components/fast-donation/fast-donation.
 import { InputComponent } from './components/input/input.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { ControlErrorContainerDirective } from './directives/control-error-container.directive';
+import { ControlErrorDirective } from './directives/control-error.directive';
+import { FormSubmitDirective } from './directives/form-submit.directive';
 import { NgvarDirective } from './directives/ngvar.directive';
 
 
 @NgModule({
-  declarations: [SpinnerComponent, NgvarDirective, InputComponent, ErrorComponent, FastDonationComponent, SliderComponent],
+  declarations: [
+    SpinnerComponent,
+    NgvarDirective,
+    InputComponent,
+    ErrorComponent,
+    FastDonationComponent,
+    SliderComponent,
+    ControlErrorContainerDirective,
+    FormSubmitDirective,
+    ControlErrorDirective,
+  ],
   exports: [
     CommonModule,
     SpinnerComponent,
@@ -20,13 +33,16 @@ import { NgvarDirective } from './directives/ngvar.directive';
     ReactiveFormsModule,
     FormsModule,
     FastDonationComponent,
-    SliderComponent
+    SliderComponent,
+    ControlErrorContainerDirective,
+    FormSubmitDirective,
+    ControlErrorDirective,
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
   ],
-  entryComponents: [FastDonationComponent]
+  entryComponents: [FastDonationComponent, ErrorComponent]
 })
 export class SharedModule { }

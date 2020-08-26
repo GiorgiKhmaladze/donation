@@ -6,16 +6,11 @@
                     დავეხმაროთ ერთმანეთს !
                 </h2>
             </div>
-            <div *ngFor="let input of donationControls" class="form__group">
+            <div *ngFor="let input of donationControls" class="form__group" appControlErrorContainer>
                 <app-input class="form__group-input" [name]="input.name" [required]="input.required"
                     [placeholder]="input.placeholder" [key]="input.key" [control]="input.control" [type]="input.type"
                     [className]=" form.get(input.key).invalid ? 'invalid' : 'valid' ">
                 </app-input>
-                <app-error class="form__group-error"
-                    *ngIf="form.get(input.key).touched && form.get(input.key).hasError('required')"
-                    [errorMessage]="'ველი აუცილებელია !'"></app-error>
-                <app-error *ngIf="form.get(input.key).touched && form.get(input.key).hasError('email')"
-                    [errorMessage]="'ელ-ფოსტა არასწორია !'"></app-error>
             </div>
             <div class="form__group margin-bottom">
                 <div class="form__radio-group">
