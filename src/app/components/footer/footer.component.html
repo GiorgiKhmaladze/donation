@@ -2,17 +2,15 @@
     <div class="container">
         <div class="footer__navigation">
             <ul class="footer__list">
-                <li class="footer__item"><a href="" class="footer__link">Company</a></li>
-                <li class="footer__item"><a href="" class="footer__link">Contact us</a></li>
-                <li class="footer__item"><a href="" class="footer__link">Carrers</a></li>
-                <li class="footer__item"><a href="" class="footer__link">Privacy policy</a></li>
-                <li class="footer__item"><a href="" class="footer__link">Terms</a></li>
+                <li class="footer__item"><a [routerLink]="['/home']" class="footer__link">მთავარი</a></li>
+                <li class="footer__item"><a [routerLink]="['/donate']" class="footer__link">დახმარება</a></li>
+                <li class="footer__item"><a [routerLink]="['/events']" class="footer__link">ივენთები</a></li>
+                <li class="footer__item"><a [routerLink]="['/contact']" class="footer__link">კონტაქტი</a></li>
             </ul>
         </div>
         <div class="footer__copyright">
-            Built my <a href="#" class="footer__link">Giorgi Khmaladze</a> for my own. Copyright &copy; by xala. You
-            are 100% allowed to use this webpage for both personal and commercial use, but NOT to claim it as your
-            owndesign. A credit to the original author, Jonas Schmedtmann, is of course highly appreciated!
+            ვებ გვერდი შექმნილია <a href="#" class="footer__link">დასახმარებლად</a> თიბისი ბანკის ანგარიძე იქნება დარიცხული გარკვეული თანხა
+            რომელსაც დაინახავს ყველა. დონაცია შეიძლება აგრეთვე ანონიმური. დავეხმაროთ და გავუბედნიეროთ ერთმანეთს ცხოვრება !
         </div>
     </div>
 </footer>
