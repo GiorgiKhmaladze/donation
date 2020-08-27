@@ -60,11 +60,6 @@ export class ContactComponent implements OnInit {
   onSubmit() {
     if (this.form.valid) {
       console.log('form submitted');
-    } else {
-      Object.keys(this.form.controls).forEach(field => {
-        const control = this.form.get(field);
-        control.markAsTouched({ onlySelf: true });
-      });
     }
   }
 

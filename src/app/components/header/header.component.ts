@@ -33,11 +33,6 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit {
       icon: 'fa fa-server'
     },
     {
-      title: 'გალერეა',
-      route: '/gallery',
-      icon: 'fa fa-window-restore'
-    },
-    {
       title: 'კონტაქტი',
       route: '/contact',
       icon: 'fa fa-bookmark'
