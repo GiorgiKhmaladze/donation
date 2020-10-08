@@ -54,6 +54,7 @@ svg {
         display: flex;
         width: 75%;
         padding: 6rem;
+        box-sizing: border-box;
     }
 
 }
@@ -61,3 +62,12 @@ svg {
     margin-bottom: 50px !important;
 }
 
+@media only screen and (max-width: 767px) {
+  .contact-container {
+
+    flex-wrap: wrap;
+  }
+  svg {
+    margin-right: 0;
+  }
+}

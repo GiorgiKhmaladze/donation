@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('menuItemBorder') menuItemBorder: ElementRef;
   @ViewChild('menuList') menuList: ElementRef;
 
+  public burgerIcon = false;
   private currentRouteSubscription: Subscription;
   private menuChildrenRef: [];
   menuItems = [
