@@ -24,10 +24,10 @@
         </label>
         <nav class="toolbar_burger-items">
             <ng-container *ngFor="let item of menuItems">
-                <span class="toolbar_burger-items--item" (click)="burgerIcon = false">
+                <a class="toolbar_burger-items--item" [routerLinkActive]="'active'" [routerLink]="[item.route]" (click)="burgerIcon = false">
+                    <span>{{ item.title }}</span>
                     <i [class]="item.icon"></i>
-                    <a [routerLink]="[item.route]">{{ item.title }}</a>
-                </span>
+                </a>
             </ng-container>
         </nav>
     </div>
