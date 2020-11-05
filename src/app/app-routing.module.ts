@@ -31,6 +31,13 @@ const routes: Routes = [{
   }
 },
 {
+  path: 'tournaments',
+  loadChildren: () => import('./modules/tournament/tournament.module').then(m => m.TournamentModule),
+  data: {
+    key: 'tournaments'
+  }
+},
+{
   path: '**',
   redirectTo: '',
   pathMatch: 'full'

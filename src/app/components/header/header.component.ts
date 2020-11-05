@@ -37,6 +37,11 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit {
       title: 'კონტაქტი',
       route: '/contact',
       icon: 'fa fa-bookmark'
+    },
+    {
+      title: 'ტურნირი',
+      route: '/tournaments',
+      icon: 'fa fa-star'
     }];
   constructor(private activatedRoute: ActivatedRoute, private headerService: HeaderService, private dialog: DialogService) { }
 
