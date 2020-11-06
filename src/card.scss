@@ -18,9 +18,24 @@
         border-radius: 3px;
         overflow: hidden;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
-
+        &--title {
+            font-size: 17px;
+            color: $primary-color;
+            text-align: center;
+        }
         &--front {
             background-color: $color-white;
+            &-1 {
+                background-image: linear-gradient(to bottom, rgb(169, 182, 178), rgb(200, 216, 200));
+            }
+
+            &-2 {
+                background-image: linear-gradient(to bottom, rgb(194, 228, 216), rgb(219, 214, 233));
+            }
+
+            &-3 {
+                background-image: linear-gradient(to bottom, rgb(202, 218, 195), rgb(233, 183, 183));
+            }
         }
         &--back {
             transform: rotateY(180deg);
@@ -130,26 +145,26 @@
         color: $primary-color-light;
         &-info {
             position: absolute;
-            bottom: 4%;
+            bottom: 6%;
             font-size: 12px;
             text-align: center;
             margin: 0 25px;
         }
         &-current {
             position: absolute;
-            bottom: 23%;
+            bottom: 28%;
             left: 15%;
         }
         &-goal {
             position: absolute;
-            bottom: 23%;
+            bottom: 28%;
             right: 15%;
         }
         &-container {
             height: 30px;
             border-radius: 3px;
             position: absolute;
-            top: 80%;
+            top: 75%;
             left: 50%;
             transform: translate(-50%, -50%);
             box-sizing: border-box;
@@ -196,7 +211,7 @@
     &__price-box {
         text-align: center;
         color: $primary-color;
-        margin-bottom: 8rem;
+        margin-bottom: 15rem;
     }
 
     &__price-only {
