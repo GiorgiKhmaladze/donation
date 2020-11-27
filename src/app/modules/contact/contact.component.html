@@ -448,8 +448,8 @@
 						კონტაქტი
 					</h2>
 				</div>
-				<div *ngFor="let input of donationControls" class="form__group" appControlErrorContainer>
-					<app-input class="form__group-input" [name]="input.name" [required]="input.required"
+				<div *ngFor="let input of donationControls" class="form__group">
+					<app-input appControlErrorContainer class="form__group-input" [name]="input.name" [required]="input.required"
 						[placeholder]="input.placeholder" [key]="input.key" [control]="input.control"
 						[type]="input.type" [className]=" form.get(input.key).invalid ? 'invalid' : 'valid' ">
 					</app-input>

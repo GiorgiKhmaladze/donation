@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { FastDonationComponent } from 'src/app/shared/components/fast-donation/fast-donation.component';
+import { LoginComponent } from 'src/app/modules/login/login.component';
+import { RegisterComponent } from 'src/app/modules/register/register.component';
 import { DialogService } from 'src/app/shared/services/dialog.service';
 import { HeaderService } from './header.service';
 
@@ -76,16 +77,30 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   donateNow(): void {
-    this.dialog.open(FastDonationComponent, {
+    this.dialog.open(LoginComponent, {
       data: { message: 'I am a dynamic component inside of a dialog!' },
       dialogState: true,
-      height: 350,
+      height: 500,
       width: 400,
       closeDelay: 300,
       animationStart: 'zoomIn',
       animationEnd: 'zoomOut'
     }).afterClosed.subscribe((result: any) => {
-      console.log('dialog closed', result);
+      if (result === 'register') {
+        setTimeout(() => {
+          this.dialog.open(RegisterComponent, {
+            data: { message: 'I am a dynamic component inside of a dialog!' },
+            dialogState: true,
+            height: 350,
+            width: 400,
+            closeDelay: 300,
+            animationStart: 'zoomIn',
+            animationEnd: 'zoomOut'
+          }).afterClosed.subscribe((res: any) => {
+            console.log('dialog closed', res);
+          });
+        }, 300);
+      }
     });
   }
 }

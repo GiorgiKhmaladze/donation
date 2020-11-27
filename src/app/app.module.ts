@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { LoginModule } from './modules/login/login.module';
 import { DialogService } from './shared/services/dialog.service';
 
 
@@ -13,13 +14,14 @@ import { DialogService } from './shared/services/dialog.service';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    LoginModule
   ],
   providers: [DialogService],
   bootstrap: [AppComponent]

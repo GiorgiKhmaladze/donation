@@ -1,0 +1,21 @@
+<div class="login">
+    <span class="heading-secondary">ავტორიზაცია</span>
+    <h6 (click)="register()" class="already-registered">
+        გაიარეთ რეგისტრაცია
+    </h6>
+    <div class="auth">
+        <div class="auth__form">
+            <form [formGroup]="form" class="form">
+                <div *ngFor="let input of loginControls" class="form__group">
+                    <app-input appControlErrorContainer class="form__group-input" [name]="input.name" [required]="input.required"
+                        [placeholder]="input.placeholder" [key]="input.key" [control]="input.control"
+                        [type]="input.type" [className]=" form.get(input.key).invalid ? 'invalid' : 'valid' ">
+                    </app-input>
+                </div>
+                <div class="form__group">
+                    <button type="submit" class="btn btn--green" (click)="onSubmit()">შესვლა</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
