@@ -1,7 +1,9 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { of, Subscription } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { LoginComponent } from 'src/app/modules/login/login.component';
+import { LoginService } from 'src/app/modules/login/login.service';
 import { RegisterComponent } from 'src/app/modules/register/register.component';
 import { DialogService } from 'src/app/shared/services/dialog.service';
 import { HeaderService } from './header.service';
@@ -44,7 +46,12 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit {
       route: '/tournaments',
       icon: 'fa fa-star'
     }];
-  constructor(private activatedRoute: ActivatedRoute, private headerService: HeaderService, private dialog: DialogService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private headerService: HeaderService,
+    private dialog: DialogService,
+    public loginService: LoginService
+  ) { }
 
   ngOnInit(): void {
 
@@ -85,13 +92,13 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit {
       closeDelay: 300,
       animationStart: 'zoomIn',
       animationEnd: 'zoomOut'
-    }).afterClosed.subscribe((result: any) => {
+    }).afterClosed.pipe(switchMap((result: any) => {
       if (result === 'register') {
         setTimeout(() => {
-          this.dialog.open(RegisterComponent, {
+          return this.dialog.open(RegisterComponent, {
             data: { message: 'I am a dynamic component inside of a dialog!' },
             dialogState: true,
-            height: 350,
+            height: 550,
             width: 400,
             closeDelay: 300,
             animationStart: 'zoomIn',
@@ -101,6 +108,7 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit {
           });
         }, 300);
       }
-    });
+      return of(null);
+    }));
   }
 }

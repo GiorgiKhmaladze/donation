@@ -9,10 +9,27 @@ import { environment } from 'src/environments/environment';
 export class LoginService {
   private apiBaseUrl = environment.apiBaseUrl;
 
-  constructor(private httpClient: HttpClient) { }
+  public userInfo;
+
+  get user(): any {
+    return this.userInfo;
+  }
+
+  constructor(private httpClient: HttpClient) {
+    this.userInfo = JSON.parse(localStorage.getItem('user'));
+  }
 
   public login(username: string, password: string): Observable<any> {
     return this.httpClient
       .post<any>(this.apiBaseUrl + '/users/login', { username, password });
+  }
+
+  public register(userData): Observable<any> {
+    return this.httpClient
+      .post<any>(this.apiBaseUrl + '/users', userData);
+  }
+
+  public setUserInfo(user: any): void {
+    this.userInfo = user;
   }
 }

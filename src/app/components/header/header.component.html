@@ -9,14 +9,17 @@
         </a>
         <span class="effect" #menuItemBorder></span>
     </div>
-    <div class="toolbar_donate">
+    <div *ngIf="!loginService.user?.username; else loggedIn" class="toolbar_donate">
         <a (click)="donateNow()">შესვლა</a>
     </div>
+    <ng-template #loggedIn>
+        <a class="toolbar_donate">{{loginService.user.username}}</a>
+    </ng-template>
     <div class="toolbar_actions">
         <span class="toolbar_actions-title">თანხა:</span> <strong>300 ₾</strong>
     </div>
     <div class="toolbar_burger">
-        <input id="burger" type="checkbox" class="toolbar_burger-checkbox" [(ngModel)]="burgerIcon"/>
+        <input id="burger" type="checkbox" class="toolbar_burger-checkbox" [(ngModel)]="burgerIcon" />
         <label for="burger">
             <span></span>
             <span></span>
@@ -24,7 +27,8 @@
         </label>
         <nav class="toolbar_burger-items">
             <ng-container *ngFor="let item of menuItems">
-                <a class="toolbar_burger-items--item" [routerLinkActive]="'active'" [routerLink]="[item.route]" (click)="burgerIcon = false">
+                <a class="toolbar_burger-items--item" [routerLinkActive]="'active'" [routerLink]="[item.route]"
+                    (click)="burgerIcon = false">
                     <span>{{ item.title }}</span>
                     <i [class]="item.icon"></i>
                 </a>

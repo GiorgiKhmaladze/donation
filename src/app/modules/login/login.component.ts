@@ -51,6 +51,8 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.form.get('username').value, this.form.get('password').value).subscribe((e: any) => {
       localStorage.setItem('user', JSON.stringify({ phone: e.phone, pid: e.pid, username: e.username }));
       localStorage.setItem('auth_token', e.accessToken);
+      this.loginService.setUserInfo({ phone: e.phone, pid: e.pid, username: e.username });
+      this.dialogRef.close('success');
     });
   }
 

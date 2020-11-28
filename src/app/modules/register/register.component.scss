@@ -1,4 +1,16 @@
 .register {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.reg {
+    box-sizing: border-box;
+    border-radius: 3px;
+
+    &__form {
+        display: flex;
+        box-sizing: border-box;
+    }
+
 }

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginModule } from './modules/login/login.module';
+import { RegisterModule } from './modules/register/register.module';
 import { DialogService } from './shared/services/dialog.service';
 
 
@@ -21,7 +22,8 @@ import { DialogService } from './shared/services/dialog.service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    LoginModule
+    LoginModule,
+    RegisterModule
   ],
   providers: [DialogService],
   bootstrap: [AppComponent]
